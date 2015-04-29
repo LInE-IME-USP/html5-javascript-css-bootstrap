@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-// necessita de instalação separada
 var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
