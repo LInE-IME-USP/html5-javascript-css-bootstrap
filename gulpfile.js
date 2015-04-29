@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
-
+var del = require('del');
 
 var app = ''; // endereço do projeto
 
@@ -13,7 +13,14 @@ gulp.task('connect', function() {
 	});
 });
 
-/* Tarefa para manter organizado os arquivos nas pastas correspondentes */
+var arquivos = {
+	html: [ app + '*.html'],
+	css: [ app + '*.css'],
+	js: [ app + '*.js'],
+	img: ['./' + app + '*.jpg']
+};
+
+/* Transfere para as pastas corretas - falta apagar os originais */
 gulp.task('organize', function() {
 	gulp.src(app + '*.html')
 	.pipe(gulp.dest(app + '/html'));
