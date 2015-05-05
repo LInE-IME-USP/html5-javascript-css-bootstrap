@@ -1,8 +1,8 @@
 var gulp = require('gulp');
-var minifyCSS = require('gulp-minify-css');
+var clean = require('gulp-clean');
 var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
-var del = require('del');
+var minifyCSS = require('gulp-minify-css');
 
 var app = ''; // endereço do projeto
 
@@ -23,15 +23,19 @@ var arquivos = {
 gulp.task('organize', function() {
 	gulp.src(app + '*.html')
 	.pipe(gulp.dest(app + '/html'));
+	.pipe(clean());
 
-	gulp.src(app + '*.css')
-	.pipe(gulp.dest(app + '/css'));
+	gulp.src(arquivos.css)
+	.pipe(gulp.dest(app + '/css'))
+	.pipe(clean());
 
-	gulp.src(app + '*.js')
-	.pipe(gulp.dest(app + '/js'));
+	gulp.src(arquivos.js)
+	.pipe(gulp.dest(app + '/js'))
+	.pipe(clean());
 
-	gulp.src(app + '*.jpg')
+	gulp.src(arquivos.img)
 	.pipe(gulp.dest(app + '/img'));
+	.pipe(clean());
 });
 
 gulp.task('html', function() {
@@ -44,11 +48,17 @@ gulp.task('css-min', function() {
 	.pipe(gulp.dest(app + 'css/min/'))
 	.pipe(connect.reload());
 });
-gulp.task('js-min', function() {
+/**/
+gulp.task('min', function() {
 	gulp.src(app + 'js/*.js')
 	.pipe(uglify())
 	.pipe(gulp.dest(app + 'js/min'))
 	.pipe(connect.reload());
+});
+
+gulp.task('copyFiles', function() {
+	gulp.src('')
+	.pipe()
 });
 
 gulp.task('watch', function() {
