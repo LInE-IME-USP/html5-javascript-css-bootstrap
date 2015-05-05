@@ -48,17 +48,12 @@ gulp.task('css-min', function() {
 	.pipe(gulp.dest(app + 'css/min/'))
 	.pipe(connect.reload());
 });
-/**/
+
 gulp.task('min', function() {
 	gulp.src(app + 'js/*.js')
 	.pipe(uglify())
 	.pipe(gulp.dest(app + 'js/min'))
 	.pipe(connect.reload());
-});
-
-gulp.task('copyFiles', function() {
-	gulp.src('')
-	.pipe()
 });
 
 gulp.task('watch', function() {
