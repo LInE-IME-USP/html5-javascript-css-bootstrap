@@ -19,23 +19,23 @@ var arquivos = {
 	img: ['./' + app + '*.jpg']
 };
 
-/* Transfere para as pastas corretas - falta apagar os originais */
+/* Transfere arquivos para as pastas corretas */
 gulp.task('organize', function() {
-	gulp.src(app + '*.html')
+	gulp.src(app + '*.html', !(app + 'index.html') )
 	.pipe(gulp.dest(app + '/html'));
-	.pipe(clean());
 
-	gulp.src(arquivos.css)
-	.pipe(gulp.dest(app + '/css'))
-	.pipe(clean());
+	gulp.src(app + '*.css')
+	.pipe(gulp.dest(app + '/css'));
 
-	gulp.src(arquivos.js)
-	.pipe(gulp.dest(app + '/js'))
-	.pipe(clean());
+	gulp.src(app + '*.js')
+	.pipe(gulp.dest(app + '/js'));
 
-	gulp.src(arquivos.img)
+	gulp.src(app + '*.jpg')
 	.pipe(gulp.dest(app + '/img'));
-	.pipe(clean());
+
+	gulp.src(app + '*.html').pipe(clean());
+	gulp.src(app + '*.css').pipe(clean());
+	gulp.src(app + '*.js').pipe(clean());
 });
 
 gulp.task('html', function() {
