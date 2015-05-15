@@ -12,4 +12,11 @@ Projeto com ferramentas e estrutura básicas para a criação em HTML5/Javascrip
     - node basic_server.js
 
 ## Unindo e minificando os arquivos JS:
-- gulp min
+- gulp min 
+
+<!--
+	- Detalhar o funcionamento
+	- Organização de diretórios
+		- Mais específica
+	- Retirar gulp min
+ -->
