@@ -1,25 +1,37 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node',
-1 verbose cli   '/usr/bin/npm',
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'install',
 1 verbose cli   '--save-dev',
-1 verbose cli   'gulp' ]
-2 info using npm@1.4.28
-3 info using node@v0.10.37
-4 verbose node symlink /usr/bin/node
-5 error Failed to parse json
-5 error Unexpected token /
-6 error File: /home/matheuspavanelli/Documentos/Faculdade/IC/html5-javascript-css-bootstrap/package.json
-7 error Failed to parse package.json data.
-7 error package.json must be actual JSON, not just JavaScript.
-7 error
-7 error This is not a bug in npm.
-7 error Tell the package author to fix their package.json file. JSON.parse
-8 error System Linux 3.13.0-48-generic
-9 error command "/usr/bin/node" "/usr/bin/npm" "install" "--save-dev" "gulp"
-10 error cwd /home/matheuspavanelli/Documentos/Faculdade/IC/html5-javascript-css-bootstrap
-11 error node -v v0.10.37
-12 error npm -v 1.4.28
-13 error file /home/matheuspavanelli/Documentos/Faculdade/IC/html5-javascript-css-bootstrap/package.json
-14 error code EJSONPARSE
+1 verbose cli   'gulp',
+1 verbose cli   'gulp-uglify' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose stack Error: Failed to parse json
+4 verbose stack Trailing comma in object at 20:3
+4 verbose stack   }
+4 verbose stack   ^
+4 verbose stack     at parseError (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:406:25)
+4 verbose stack     at parseJson (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:86:51)
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:60:33
+4 verbose stack     at evalmachine.<anonymous>:334:14
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:102:5
+4 verbose stack     at FSReqWrap.oncomplete (evalmachine.<anonymous>:95:15)
+5 verbose cwd /Users/mspavanelli/Documents/Faculdade/IC/html5-javascript-css-bootstrap
+6 error Darwin 14.3.0
+7 error argv "node" "/usr/local/bin/npm" "install" "--save-dev" "gulp" "gulp-uglify"
+8 error node v0.12.2
+9 error npm  v2.7.4
+10 error file /Users/mspavanelli/Documents/Faculdade/IC/html5-javascript-css-bootstrap/package.json
+11 error code EJSONPARSE
+12 error Failed to parse json
+12 error Trailing comma in object at 20:3
+12 error   }
+12 error   ^
+13 error File: /Users/mspavanelli/Documents/Faculdade/IC/html5-javascript-css-bootstrap/package.json
+14 error Failed to parse package.json data.
+14 error package.json must be actual JSON, not just JavaScript.
+14 error
+14 error This is not a bug in npm.
+14 error Tell the package author to fix their package.json file. JSON.parse
 15 verbose exit [ 1, true ]

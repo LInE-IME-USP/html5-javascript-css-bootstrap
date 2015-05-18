@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var clean = require('gulp-clean');
+var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var minifyCSS = require('gulp-minify-css');
@@ -56,10 +57,16 @@ gulp.task('min', function() {
 	.pipe(connect.reload());
 });
 
+gulp.task('concat', function() {
+	gulp.src(app + 'js/min/**')
+	.pipe(concat('main.min.js'))
+	.pipe(gulp.dest(app = 'js/min/'));
+});
+
 gulp.task('watch', function() {
 	gulp.watch(app + 'html/*.html', ['html']);
 	gulp.watch(app + 'css/*.css', ['css-min']);
 	gulp.watch(app + 'js/*.js', ['js-min']);
 });
 
-gulp.task('default', [ 'organize', 'html', 'css-min', 'js-min', 'watch', 'connect']);
+gulp.task('default', [ 'organize', 'html', 'css-min', 'js-min', 'concat', 'watch', 'connect']);
