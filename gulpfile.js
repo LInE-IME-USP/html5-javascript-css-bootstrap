@@ -13,13 +13,6 @@ gulp.task('connect', function() {
 	});
 });
 
-var arquivos = {
-	html: [ app + '*.html'],
-	css: [ app + '*.css'],
-	js: [ app + '*.js'],
-	img: ['./' + app + '*.jpg']
-};
-
 /* Transfere arquivos para as pastas corretas */
 gulp.task('organize', function() {
 	gulp.src(app + '*.html', !(app + 'index.html') )
