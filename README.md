@@ -12,20 +12,33 @@ Projeto com ferramentas e estrutura básicas para a criação em HTML5/Javascrip
     - node basic_server.js
 
 ## Organização
-Conteúdo em 4 sub-diretórios:
+
+A organização padrão dos diretórios é a seguinte:
 
 - html
 - css
+	- min
 - js
+	- min
 - img (para as imagens)
+-lib (recursos externos)
 
-Obs.: As pastas css e js terão também uma pasta min cada uma onde ficarão as versões minificadas das folhas de estilo e das funções JavaScrip
+### Pasta dist
+
+Há uma pasta 'dist' que contêm 3 arquivos:
+
+- index.html
+- main.min.css
+- main.min.js
+
+Neles está agrupado em forma minificada todo o código gerado.
 
 ## Automatização
-Ao executar o comando 'gulp' as seguintes operações serão realizadas:
+Ao executar o comando 'gulp' as seguintes operações são realizadas:
 	
-* Os arquivos serão movidos para as pastas correspondentes
+* Os arquivos serão movidos para as pastas correspondentes. Caso uma pasta não exista, ela será criada
 * Serão gerados os arquivos minificados de css e js dentro das respectivas pastas min
+* Serão gerados os arquivos da pasta 'dist'
 * Qualquer modificação que for salva nos arquivos será automaticamente atualizada no navegador
 
 <!--
