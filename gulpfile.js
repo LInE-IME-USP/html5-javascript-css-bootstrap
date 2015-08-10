@@ -5,7 +5,7 @@ var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var minifyCSS = require('gulp-minify-css');
 
-var app = ''; // endereço do projeto
+var app = 'Teste'; // endereço do projeto
 
 /* Cria os diretórios */
 gulp.task('dir', function() {
@@ -96,6 +96,7 @@ gulp.task('min', ['css-min', 'js-min']);
 
 /* Tarefas para o AngularJS */
 gulp.task('angularJS', function() {
+
 	// criar arquivo unido
 	// agragar controllers
 	// agregar views
