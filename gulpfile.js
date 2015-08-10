@@ -38,23 +38,23 @@ gulp.task('limpe', function() {
 	gulp.src(app + '*.png').pipe(clean());
 });
 
-/* Transfere arquivos para as pastas corretas */
+/* Move os arquivos para as pastas correspondentes*/
 gulp.task('moveFiles', function() {
-	gulp.src(app + '*.html' )
-	.pipe(gulp.dest(app + '/html'));
-
+	gulp.src(app + '*.html')
+	.pipe(gulp.dest(app + 'html/'));
+	
 	gulp.src(app + '*.css')
-	.pipe(gulp.dest(app + '/css'))
+	.pipe(gulp.dest(app + 'css/'))
 	.pipe(minifyCSS())
 	.pipe(gulp.dest(app + 'css/min/'));
-
+	
 	gulp.src(app + '*.js')
-	.pipe(gulp.dest(app + '/js'))
+	.pipe(gulp.dest(app + 'js/'))
 	.pipe(uglify())
 	.pipe(gulp.dest(app + 'js/min'));
-
+	
 	gulp.src(app + '*.jpg')
-	.pipe(gulp.dest(app + '/img'));
+	.pipe(gulp.dest(app + 'img/'));
 
 	gulp.src(app + '*.png')
 	.pipe(gulp.dest(app + 'img/'));
@@ -93,8 +93,14 @@ gulp.task('js-min', function() {
 /* Minifica CSS e JS */
 gulp.task('min', ['css-min', 'js-min']);
 
-/* Organização Geral dos Arquivos */
-gulp.task('organize', ['moveFiles', 'limpe']);
+/* Tarefas para o AngularJS */
+gulp.task('angularJS', function() {
+	// criar arquivo unido
+	// agragar controllers
+	// agregar views
+	// agregar services
+	// minificar
+});
 
 gulp.task('concat', function() {
 	gulp.src(app + 'html/*.html')
@@ -110,6 +116,24 @@ gulp.task('concat', function() {
 	.pipe(gulp.dest(app + 'dist'));
 });
 
+/* Organização Geral dos Arquivos */
+gulp.task('organize', ['moveFiles', 'limpe']);
+
+gulp.task('mkdir', function() {
+	gulp.src(app + 'html/*.html')
+	.pipe(concat('index.html'))
+	.pipe(gulp.dest(app + 'dist'));
+
+	gulp.src(app + 'css/min/*.css')
+	.pipe(concat('main.min.css'))
+	.pipe(gulp.dest(app + 'dist'));
+
+	gulp.src(app + 'js/min/*.js')
+	.pipe(concat('main.min.js'))
+	.pipe(gulp.dest(app + 'dist'));
+});
+
+/* Atualiza a qualquer alteração em arquivos */
 gulp.task('watch', function() {
 	gulp.watch(app + 'css/*.css', ['css-min']);
 	gulp.watch(app + 'js/*.js', ['js-min']);
