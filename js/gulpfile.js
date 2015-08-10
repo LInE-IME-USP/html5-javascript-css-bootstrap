@@ -26,6 +26,7 @@ gulp.task('dir', function() {
 gulp.task('connect', function() {
 	connect.server({
 		livereload: true
+		// browser: 'Google Chrome'
 	});
 });
 

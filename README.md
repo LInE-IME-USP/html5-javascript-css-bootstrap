@@ -21,11 +21,11 @@ A organização padrão dos diretórios é a seguinte:
 - js
 	- min
 - img (para as imagens)
--lib (recursos externos)
+- lib (recursos externos)
 
 ### Pasta dist
 
-Há uma pasta 'dist' que contêm 3 arquivos:
+Há uma pasta _dist_ que contêm 3 arquivos:
 
 - index.html
 - main.min.css
@@ -34,11 +34,11 @@ Há uma pasta 'dist' que contêm 3 arquivos:
 Neles está agrupado em forma minificada todo o código gerado.
 
 ## Automatização
-Ao executar o comando 'gulp' as seguintes operações são realizadas:
+Ao executar o comando `gulp` as seguintes operações são realizadas:
 	
 * Os arquivos serão movidos para as pastas correspondentes. Caso uma pasta não exista, ela será criada
 * Serão gerados os arquivos minificados de css e js dentro das respectivas pastas min
-* Serão gerados os arquivos da pasta 'dist'
+* Serão gerados os arquivos da pasta _dist_
 * Qualquer modificação que for salva nos arquivos será automaticamente atualizada no navegador
 
 <!--
