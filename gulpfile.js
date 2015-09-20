@@ -32,9 +32,9 @@ gulp.task('connect', function() {
 
 /* Limpa os arquivos */
 gulp.task('limpe', function() {
-	gulp.src(app + '*.html').pipe(clean());
+	// gulp.src(app + '*.html').pipe(clean());
 	gulp.src(app + '*.css').pipe(clean());
-	gulp.src(app + '*.js').pipe(clean());
+	// gulp.src(app + '*.js').pipe(clean());
 	gulp.src(app + '*.jpg').pipe(clean());
 	gulp.src(app + '*.png').pipe(clean());
 });
@@ -71,7 +71,7 @@ gulp.task('r-css', function() {
 });
 
 gulp.task('r-js', function() {
-	gulp.src(app + 'js/*.js').pipe(connect.reload());
+	gulp.src(app + 'js/**').pipe(connect.reload());
 });
 
 gulp.task('refresh', ['r-html', 'r-css', 'r-js']);
@@ -97,13 +97,11 @@ gulp.task('min', ['css-min', 'js-min']);
 /* Tarefas para o AngularJS */
 gulp.task('angularJS', function() {
 	// agragar controllers
+	var jsFiles = gulp.src(app + 'js/');
+	if ( jsFiles.match(/(js)/) ) {
 	// agregar views
 	// agregar services
 	// minificar
-	gulp.src([app + 'js/angular/controller.js'])
-	.pipe(concat('angular_files.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest(app + 'js/angular/angular_files.min.js'));
 });
 
 gulp.task('concat', function() {
@@ -140,8 +138,9 @@ gulp.task('mkdir', function() {
 /* Atualiza a qualquer alteração em arquivos */
 gulp.task('watch', function() {
 	gulp.watch(app + 'css/*.css', ['css-min']);
-	gulp.watch(app + 'js/*.js', ['js-min']);
+	gulp.watch(app + 'js/**', ['js-min']);
 	gulp.watch(app + '**', ['refresh', 'mkdir']);
 });
 
-gulp.task('default', ['dir', 'organize', 'connect', 'watch', 'refresh']);
+// gulp.task('default', ['dir', 'organize', 'connect', 'watch', 'refresh']);
+gulp.task('default', ['angularJS']);
