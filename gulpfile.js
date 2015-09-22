@@ -86,7 +86,10 @@ gulp.task('organize', ['moveFiles', 'limpe']);
 
 gulp.task('angularJS', function() {
 	var jsFiles = gulp.src(app + 'js/');
-	console.log( jsFiles );	
+
+	if ( jsFiles.match(/(js)/) ) {
+		console.log( "js file" );
+	}
 })
 
 gulp.task('default', ['min', 'server-reload']);

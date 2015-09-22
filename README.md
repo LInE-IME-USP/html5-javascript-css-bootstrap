@@ -37,17 +37,17 @@ Neles está agrupado em forma minificada todo o código gerado.
 Ao executar o comando `gulp` as seguintes operações são realizadas:
 	
 * Qualquer modificação que for salva nos arquivos será automaticamente atualizada no navegador
-<!-- * Os arquivos serão movidos para as pastas correspondentes. Caso uma pasta não exista, ela será criada -->
-<!-- * Serão gerados os arquivos minificados de css e js dentro das respectivas pastas min -->
-<!-- * Serão gerados os arquivos da pasta _dist_ -->
 
 Há também comandos mais específicos para algumas tarefas tarefas
 
 `gulp`
-: Inicia o servidor já com autocarregamento da página
+:Inicia o servidor já com autocarregamento da página
+
 `gulp organize`
 : Cria diretórios conforme especificado
+
 `min`
 : Minifica as folhas de estilo e funções javascript
+
 `gulp angularJS`
 : Cria diretórios conforme especificado
