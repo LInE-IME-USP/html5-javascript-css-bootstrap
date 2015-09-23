@@ -27,6 +27,7 @@ gulp.task('dir', function() {
 gulp.task('server-reload', function() {
 	browserSync({
 		logPrefix: 'IME',
+		browser: 'google chrome',
 		server: [app]
 	});
 	gulp.watch([app + '**'], ['min']);
