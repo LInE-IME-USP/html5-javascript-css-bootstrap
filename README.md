@@ -7,10 +7,6 @@ Projeto com ferramentas e estrutura básicas para a criação em HTML5/Javascrip
 - NPM (node package manager, na instalação do NodeJS geralmente o NPM já vem instalado junto.)
 - O bin do node estar dentro do path
 
-## Rodando através do servidor embutido (dispensa instalação do Apache):
-- executar no shell:
-    - node basic_server.js
-
 ## Organização
 
 A organização padrão dos diretórios é a seguinte:
@@ -41,13 +37,13 @@ Ao executar o comando `gulp` as seguintes operações são realizadas:
 Há também comandos mais específicos para algumas tarefas tarefas
 
 `gulp`
-:Inicia o servidor já com autocarregamento da página
+	: Inicia o servidor já com autocarregamento da página
 
 `gulp organize`
-: Cria diretórios conforme especificado
+	: Cria diretórios conforme especificado
 
 `min`
-: Minifica as folhas de estilo e funções javascript
+	: Minifica as folhas de estilo e funções javascript
 
 `gulp angularJS`
-: Cria diretórios conforme especificado
+	: Separa e os arquivos do AngularJS (controllers, views e services) em pastas. Para melhor uso do recurso, é importante que os arquivos estejam propriamente identificados com *Ctrl*, *Service* ou *View* no final do arquivo. 
