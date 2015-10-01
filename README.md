@@ -19,15 +19,6 @@ A organização padrão dos diretórios é a seguinte:
 - img (para as imagens)
 - lib (recursos externos)
 
-### Pasta dist
-
-Há uma pasta _dist_ que contêm 3 arquivos:
-
-- index.html
-- main.min.css
-- main.min.js
-
-Neles está agrupado em forma minificada todo o código gerado.
 
 ## Automatização e Comandos
 Ao executar o comando `gulp` as seguintes operações são realizadas:
@@ -43,7 +34,7 @@ Há também comandos mais específicos para algumas tarefas tarefas
 	: Cria diretórios conforme especificado
 
 `min`
-	: Minifica as folhas de estilo e funções javascript
+	: Minifica as folhas de estilo e funções javascript e salva dentro das respectivas pastas min
 
-`gulp angularJS`
+`gulp angularJS` - __EM FASE DE TESTES__
 	: Separa e os arquivos do AngularJS (controllers, views e services) em pastas. Para melhor uso do recurso, é importante que os arquivos estejam propriamente identificados com *Ctrl*, *Service* ou *View* no final do arquivo. 
