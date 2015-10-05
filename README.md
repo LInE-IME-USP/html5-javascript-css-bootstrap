@@ -38,3 +38,5 @@ Há também comandos mais específicos para algumas tarefas tarefas
 
 `gulp angularJS` - __EM FASE DE TESTES__
 	: Separa e os arquivos do AngularJS (controllers, views e services) em pastas. Para melhor uso do recurso, é importante que os arquivos estejam propriamente identificados com *Ctrl*, *Service* ou *View* no final do arquivo. 
+
+Mais informações: [Wiki][https://github.com/mspavanelli/html5-javascript-css-bootstrap/wiki]

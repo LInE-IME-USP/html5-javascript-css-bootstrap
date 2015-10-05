@@ -7,7 +7,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var minifyCSS = require('gulp-minify-css');
 
-var app = 'src/'; // endereço do projeto
+var app = 'Teste/'; // endereço do projeto
 
 /* Cria os diretórios */
 gulp.task('dir', function() {
