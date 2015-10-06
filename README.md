@@ -6,10 +6,10 @@ Projeto com ferramentas e estrutura básicas para a criação em HTML5/Javascrip
 
 ## Dependências
 
-**NodeJS**
+**NodeJS** <br>
 &emsp;Interpretador de Javascript no servidor
 
-**NPM**
+**NPM** <br>
 &emsp;node package manager, na instalação do NodeJS geralmente o NPM já vem instalado junto.)
 
 - O bin do node estar dentro do path
