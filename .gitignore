@@ -1,1 +1,4 @@
 /node_modules
+/Teste
+gulpfiles.js
+*.log
