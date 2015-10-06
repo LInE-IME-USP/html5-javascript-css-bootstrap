@@ -1,25 +1,25 @@
-# Aplicação para servir de base a novas ferramentas HTML5/Javascript/CSS
+#IME WEB Bootstrap
+
+## Descrição
 
 Projeto com ferramentas e estrutura básicas para a criação em HTML5/Javascript/CSS
 
-## Dependências:
-- NodeJS
-- NPM (node package manager, na instalação do NodeJS geralmente o NPM já vem instalado junto.)
+## Dependências
+
+NodeJS
+: Interpretador de Javascript no servidor
+
+NPM
+: node package manager, na instalação do NodeJS geralmente o NPM já vem instalado junto.)
+
 - O bin do node estar dentro do path
 
-## Organização
 
-A organização padrão dos diretórios é a seguinte:
+## Funcionamento
 
-- html
-- css
-	- min
-- js
-	- min
-- img (para as imagens)
-- lib (recursos externos)
+Para informações mais detalhadas, consulte a [Wiki](https://github.com/mspavanelli/html5-javascript-css-bootstrap/wiki) do projeto.
 
-
+<!-- 
 ## Automatização e Comandos
 Ao executar o comando `gulp` as seguintes operações são realizadas:
 	
@@ -38,5 +38,4 @@ Há também comandos mais específicos para algumas tarefas tarefas
 
 `gulp angularJS` - __EM FASE DE TESTES__
 	: Separa e os arquivos do AngularJS (controllers, views e services) em pastas. Para melhor uso do recurso, é importante que os arquivos estejam propriamente identificados com *Ctrl*, *Service* ou *View* no final do arquivo. 
-
-Mais informações: [Wiki][https://github.com/mspavanelli/html5-javascript-css-bootstrap/wiki]
+ -->

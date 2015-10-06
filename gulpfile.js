@@ -6,8 +6,10 @@ var connect = require('gulp-connect');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var minifyCSS = require('gulp-minify-css');
+var gulpif = require('gulp-if');
+var args = require('yargs').argv;
 
-var app = 'Teste/'; // endereço do projeto
+var app = 'src/'; // endereço do projeto
 
 /* Cria os diretórios */
 gulp.task('dir', function() {
@@ -27,11 +29,11 @@ gulp.task('dir', function() {
 gulp.task('server-reload', function() {
 	browserSync({
 		logPrefix: 'IME',
-		browser: 'google chrome',
 		server: [app]
 	});
-	gulp.watch([app + '**'], ['min']);
+
 	gulp.watch([app + '**/*.*'], reload);
+	if ( args.min ) gulp.watch([app + '**'], ['min']);
 });
 
 /* Move os arquivos para as pastas correspondentes*/
@@ -85,6 +87,7 @@ gulp.task('limpe', function() {
 /* Organização Geral dos Arquivos */
 gulp.task('organize', ['moveFiles', 'limpe']);
 
+/* FASE DE TESTES */
 gulp.task('angularJS', function() {
 	var jsFiles = gulp.src(app + 'js/');
 
@@ -93,4 +96,4 @@ gulp.task('angularJS', function() {
 	}
 })
 
-gulp.task('default', ['min', 'server-reload']);
+gulp.task('default', ['server-reload']);
